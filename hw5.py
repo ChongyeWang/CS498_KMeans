@@ -5,7 +5,7 @@ import numpy as np
 from sklearn.cluster import KMeans
 import sys
 
-def divid(action_dict, length):
+def divide(action_dict, length):
     new_action_dict = {}
     for action in action_dict:
         new_action_dict[action] = []
@@ -63,7 +63,7 @@ for folder in selected_folders:
 ################################################################################
 
 #we do vector quantization
-action_dict = divid(action_dict, 32)
+action_dict = divide(action_dict, 32)
 
 # reverse the key and value of action_dict
 label_action = reverse_dict(action_dict)
