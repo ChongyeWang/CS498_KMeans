@@ -98,7 +98,7 @@ for folder in selected_folders:
 ################################################################################
 
 
-#Represent each lable with numbers
+#Represent each label with numbers
 action_num = {
     'Liedown_bed' : 0,
     'Walk' : 1,
