@@ -194,6 +194,30 @@ def kmeans(k, n):
             label = vec_label[tuple(vec)]
             action_center[action][label] += 1
 
+
+    ############ Plot Histograms ###########
+
+    fig = plt.figure()
+
+    action_index = 1
+    for action in action_center:
+        size = len(original[action])
+        center_list = action_center[action]
+        center_list = np.array(center_list) / size
+
+        plt.subplot(4, 4, action_index)
+        plt.bar([i for i in range(1, k + 1)], center_list)
+        plt.title(action)
+
+        action_index += 1
+
+    fig.suptitle('K = 19', color = 'r')
+    fig.tight_layout()
+    plt.legend()
+    plt.show()
+
+
+
     ################ Train ###############
 
     train = []
@@ -259,6 +283,9 @@ def kmeans(k, n):
     plt.colorbar()
     plt.show()
     ############################
+
+
+
 
 
 if __name__ == "__main__":
